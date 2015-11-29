@@ -3,6 +3,24 @@ require "grid_square_jpn/exceptions"
 
 module GridSquareJpn
 
+  # the minimum value of latitude.
+  LAT_MIN = 20.0
+
+  # the maximum value of latitude.
+  LAT_MAX = 46.0
+
+  # the minimum value of longitude.
+  LNG_MIN = 122.0
+
+  # the maximum value of longitude.
+  LNG_MAX = 154.0
+
+  # the range of valid latitude.
+  LAT_RANGE = LAT_MIN..LAT_MAX
+
+  # the range of valid longitude.
+  LNG_RANGE = LNG_MIN..LNG_MAX
+
   #
   # get the mesh code of primary area partition.
   # @param  [Float]  lat  latitude.
