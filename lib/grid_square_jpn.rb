@@ -37,6 +37,7 @@ module GridSquareJpn
   # @return [String] the mesh code.
   #
   def secondary(lat, lng)
+    # TODO
   end
 
   #
@@ -46,6 +47,7 @@ module GridSquareJpn
   # @return [String] the mesh code.
   #
   def basic(lat, lng)
+    # TODO
   end
 
   #
@@ -55,6 +57,7 @@ module GridSquareJpn
   # @return [String] the mesh code.
   #
   def half(lat, lng)
+    # TODO
   end
 
   #
@@ -64,6 +67,21 @@ module GridSquareJpn
   # @return [String] the mesh code.
   #
   def quarter(lat, lng)
+    # TODO
+  end
+
+  private
+
+  def validate(lat, lng)
+    if !LAT_RANGE.include?(lat)
+      raise OutOfRangeException.new("lat should be in #{LAT_RANGE}.")
+    end
+
+    if !LNG_RANGE.include?(lng)
+      raise OutOfRangeException.new("lng should be in #{LNG_RANGE}.")
+    end
+
+    true
   end
 
 end
