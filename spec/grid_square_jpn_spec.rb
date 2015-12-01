@@ -5,6 +5,15 @@ describe GridSquareJpn do
     expect(GridSquareJpn::VERSION).not_to be nil
   end
 
+  describe "primary"
+
+  describe "secondary"
+
+  describe "basic"
+
+  describe "half"
+
+  describe "quarter"
 
   describe "validate" do
     context "when the lat is less than 20.0," do
