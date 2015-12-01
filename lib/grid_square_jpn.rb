@@ -27,7 +27,7 @@ module GridSquareJpn
   # @param  [Float]  lng  longitude.
   # @return [String] the mesh code.
   #
-  def primary(lat, lng)
+  def self.primary(lat, lng)
   end
 
   #
@@ -36,7 +36,7 @@ module GridSquareJpn
   # @param  [Float]  lng  longitude.
   # @return [String] the mesh code.
   #
-  def secondary(lat, lng)
+  def self.secondary(lat, lng)
     # TODO
   end
 
@@ -46,7 +46,7 @@ module GridSquareJpn
   # @param  [Float]  lng  longitude.
   # @return [String] the mesh code.
   #
-  def basic(lat, lng)
+  def self.basic(lat, lng)
     # TODO
   end
 
@@ -56,7 +56,7 @@ module GridSquareJpn
   # @param  [Float]  lng  longitude.
   # @return [String] the mesh code.
   #
-  def half(lat, lng)
+  def self.half(lat, lng)
     # TODO
   end
 
@@ -66,7 +66,7 @@ module GridSquareJpn
   # @param  [Float]  lng  longitude.
   # @return [String] the mesh code.
   #
-  def quarter(lat, lng)
+  def self.quarter(lat, lng)
     # TODO
   end
 
