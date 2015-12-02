@@ -72,6 +72,18 @@ module GridSquareJpn
 
   private
 
+  #
+  # get the mesh code of given location.
+  #
+  # @param [Float] lat latitude
+  # @param [Float] lng longitude
+  # @return [Hash] a set of mesh codes.
+  #
+  def self.mesh_code(lat, lng, primary: false, seconday: false, basic: false, half: false, quarter: false)
+    codes = {}
+    codes
+  end
+
   def self.validate(lat, lng)
     raise OutOfRangeException.new("lat should be in #{LAT_RANGE}.") unless LAT_RANGE.include? lat
     raise OutOfRangeException.new("lng should be in #{LNG_RANGE}.") unless LNG_RANGE.include? lng

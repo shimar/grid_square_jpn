@@ -15,6 +15,36 @@ describe GridSquareJpn do
 
   describe "quarter"
 
+  describe "mesh_code" do
+    context "when :primary, :secondary, :basic, :half, :quarter are not given," do
+      it "returns an empty Hash." do
+        expect(GridSquareJpn.send(:mesh_code, 22.0, 154.0)).to be_instance_of Hash;
+        expect(GridSquareJpn.send(:mesh_code, 22.0, 154.0)).to be_empty
+      end
+    end
+
+    context "when true given as :primary," do
+      it "returns a Hash object which includes :primary key."
+    end
+
+    context "when true given as :secondary," do
+      it "returns a Hash object which includes :secodary key."
+    end
+
+    context "when true given as :basic," do
+      it "returns a Hash object which includes :basic key."
+    end
+
+    context "when true given as :half," do
+      it "returns a Hash object which includes :half key."
+    end
+
+    context "when true given as :quarter," do
+      it "returns a Hash object which includes :quarter key."
+    end
+
+  end
+
   describe "validate" do
     context "when the lat is less than 20.0," do
       it "raise OutOfRangeException." do
