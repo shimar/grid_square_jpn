@@ -73,14 +73,8 @@ module GridSquareJpn
   private
 
   def self.validate(lat, lng)
-    if !LAT_RANGE.include?(lat)
-      raise OutOfRangeException.new("lat should be in #{LAT_RANGE}.")
-    end
-
-    if !LNG_RANGE.include?(lng)
-      raise OutOfRangeException.new("lng should be in #{LNG_RANGE}.")
-    end
-
+    raise OutOfRangeException.new("lat should be in #{LAT_RANGE}.") unless LAT_RANGE.include? lat
+    raise OutOfRangeException.new("lng should be in #{LNG_RANGE}.") unless LNG_RANGE.include? lng
     true
   end
 
