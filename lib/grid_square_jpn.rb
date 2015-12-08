@@ -28,6 +28,9 @@ module GridSquareJpn
   # @return [String] the mesh code.
   #
   def self.primary(lat, lng)
+    validate(lat, lng)
+    codes = mesh_code(lat, lng, primary: true)
+    codes[:primary]
   end
 
   #
@@ -37,7 +40,9 @@ module GridSquareJpn
   # @return [String] the mesh code.
   #
   def self.secondary(lat, lng)
-    # TODO
+    validate(lat, lng)
+    codes = mesh_code(lat, lng, secondary: true)
+    codes[:secondary]
   end
 
   #
@@ -47,7 +52,9 @@ module GridSquareJpn
   # @return [String] the mesh code.
   #
   def self.basic(lat, lng)
-    # TODO
+    validate(lat, lng)
+    codes = mesh_code(lat, lng, basic: true)
+    codes[:basic]
   end
 
   #
@@ -57,7 +64,9 @@ module GridSquareJpn
   # @return [String] the mesh code.
   #
   def self.half(lat, lng)
-    # TODO
+    validate(lat, lng)
+    codes = mesh_code(lat, lng, half: true)
+    codes[:half]
   end
 
   #
@@ -67,7 +76,9 @@ module GridSquareJpn
   # @return [String] the mesh code.
   #
   def self.quarter(lat, lng)
-    # TODO
+    validate(lat, lng)
+    codes = mesh_code(lat, lng, quarter: true)
+    codes[:quarter]
   end
 
   private

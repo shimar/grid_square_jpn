@@ -5,15 +5,105 @@ describe GridSquareJpn do
     expect(GridSquareJpn::VERSION).not_to be nil
   end
 
-  describe "primary"
+  describe "primary" do
+    before do
+      @lat =  35.70078
+      @lng = 139.71475
+    end
 
-  describe "secondary"
+    it "returns the mesh code of the primary area partition." do
+      expect(GridSquareJpn.primary(@lat, @lng)).to eq "5339"
+    end
 
-  describe "basic"
+    context "when the invalid values given," do
+      it "raise OutOfRangeException." do
+        @lat = 19.999
+        expect {
+          GridSquareJpn.primary(@lat, @lng)
+        }.to raise_error GridSquareJpn::OutOfRangeException
+      end
+    end
+  end
 
-  describe "half"
+  describe "secondary" do
+    before do
+      @lat =  35.70078
+      @lng = 139.71475
+    end
 
-  describe "quarter"
+    it "returns the mesh code of the secondary area partition." do
+      expect(GridSquareJpn.secondary(@lat, @lng)).to eq "45"
+    end
+
+    context "when the invalid values given," do
+      it "raise OutOfRangeException." do
+        @lat = 19.999
+        expect {
+          GridSquareJpn.secondary(@lat, @lng)
+        }.to raise_error GridSquareJpn::OutOfRangeException
+      end
+    end
+  end
+
+  describe "basic" do
+    before do
+      @lat =  35.70078
+      @lng = 139.71475
+    end
+
+    it "returns the mesh code of the basic grid square." do
+      expect(GridSquareJpn.basic(@lat, @lng)).to eq "47"
+    end
+
+    context "when the invalid values given," do
+      it "raise OutOfRangeException." do
+        @lat = 19.999
+        expect {
+          GridSquareJpn.basic(@lat, @lng)
+        }.to raise_error GridSquareJpn::OutOfRangeException
+      end
+    end
+  end
+
+  describe "half" do
+    before do
+      @lat =  35.70078
+      @lng = 139.71475
+    end
+
+    it "returns the mesh code of the half grid square." do
+      expect(GridSquareJpn.half(@lat, @lng)).to eq "1"
+    end
+
+    context "when the invalid values given," do
+      it "raise OutOfRangeException." do
+        @lat = 19.999
+        expect {
+          GridSquareJpn.half(@lat, @lng)
+        }.to raise_error GridSquareJpn::OutOfRangeException
+      end
+    end
+  end
+
+  describe "quarter" do
+    before do
+      @lat =  35.70078
+      @lng = 139.71475
+    end
+
+    it "returns the mesh code of the quarter grid square." do
+      expect(GridSquareJpn.quarter(@lat, @lng)).to eq "1"
+    end
+
+    context "when the invalid values given," do
+      it "raise OutOfRangeException." do
+        @lat = 19.999
+        expect {
+          GridSquareJpn.quarter(@lat, @lng)
+        }.to raise_error GridSquareJpn::OutOfRangeException
+      end
+    end
+  end
 
   describe "mesh_code" do
     before do
