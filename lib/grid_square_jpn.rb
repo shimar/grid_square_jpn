@@ -21,6 +21,9 @@ module GridSquareJpn
   # the range of valid longitude.
   LNG_RANGE = LNG_MIN..LNG_MAX
 
+  # the separator of codes.
+  SEPARATOR = "-"
+
   #
   # get the mesh code of primary area partition.
   # @param  [Float]  lat  latitude.
