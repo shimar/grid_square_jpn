@@ -16,31 +16,86 @@ describe GridSquareJpn do
   describe "quarter"
 
   describe "mesh_code" do
+    before do
+      @lat =  35.70078
+      @lng = 139.71475
+    end
+
     context "when :primary, :secondary, :basic, :half, :quarter are not given," do
       it "returns an empty Hash." do
-        expect(GridSquareJpn.send(:mesh_code, 22.0, 154.0)).to be_instance_of Hash;
-        expect(GridSquareJpn.send(:mesh_code, 22.0, 154.0)).to be_empty
+        expect(GridSquareJpn.send(:mesh_code, @lat, @lng)).to be_instance_of Hash;
+        expect(GridSquareJpn.send(:mesh_code, @lat, @lng)).to be_empty
       end
     end
 
     context "when true given as :primary," do
-      it "returns a Hash object which includes :primary key."
+      before do
+        @codes = GridSquareJpn.send(:mesh_code, @lat, @lng, primary: true)
+      end
+
+      it "returns a Hash object which includes :primary key." do
+        expect(@codes.key?(:primary)).to be_truthy
+      end
+
+      it "calculate the mesh code of primary area partition." do
+        expect(@codes[:primary]).to eq "5339"
+      end
     end
 
     context "when true given as :secondary," do
-      it "returns a Hash object which includes :secodary key."
+      before do
+        @codes = GridSquareJpn.send(:mesh_code, @lat, @lng, secondary: true)
+      end
+
+      it "returns a Hash object which includes :secodary key." do
+        expect(@codes.key?(:secondary)).to be_truthy
+      end
+
+      it "calculate the mesh code of secondary area partition." do
+        expect(@codes[:secondary]).to eq "45"
+      end
     end
 
     context "when true given as :basic," do
-      it "returns a Hash object which includes :basic key."
+      before do
+        @codes = GridSquareJpn.send(:mesh_code, @lat, @lng, basic: true)
+      end
+
+      it "returns a Hash object which includes :basic key." do
+        expect(@codes.key?(:basic)).to be_truthy
+      end
+
+      it "calculate the mesh code of basic grid square." do
+        expect(@codes[:basic]).to eq "47"
+      end
     end
 
     context "when true given as :half," do
-      it "returns a Hash object which includes :half key."
+      before do
+        @codes = GridSquareJpn.send(:mesh_code, @lat, @lng, half: true)
+      end
+
+      it "returns a Hash object which includes :half key." do
+        expect(@codes.key?(:half)).to be_truthy
+      end
+
+      it "calculate the mesh code of half grid square." do
+        expect(@codes[:half]).to eq "1"
+      end
     end
 
     context "when true given as :quarter," do
-      it "returns a Hash object which includes :quarter key."
+      before do
+        @codes = GridSquareJpn.send(:mesh_code, @lat, @lng, quarter: true)
+      end
+
+      it "returns a Hash object which includes :quarter key." do
+        expect(@codes.key?(:quarter)).to be_truthy
+      end
+
+      it "calculate the mesh code of quarter grid square." do
+        expect(@codes[:quarter]).to eq "1"
+      end
     end
 
   end
