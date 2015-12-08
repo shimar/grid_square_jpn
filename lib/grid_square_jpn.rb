@@ -46,8 +46,8 @@ module GridSquareJpn
   #
   def self.secondary(lat, lng)
     validate(lat, lng)
-    codes = mesh_code(lat, lng, secondary: true)
-    codes[:secondary]
+    codes = mesh_code(lat, lng, primary: true, secondary: true)
+    format(codes[:primary], codes[:secondary])
   end
 
   #
@@ -59,8 +59,8 @@ module GridSquareJpn
   #
   def self.basic(lat, lng)
     validate(lat, lng)
-    codes = mesh_code(lat, lng, basic: true)
-    codes[:basic]
+    codes = mesh_code(lat, lng, primary: true, secondary: true, basic: true)
+    format(codes[:primary], codes[:secondary], codes[:basic])
   end
 
   #
@@ -72,8 +72,8 @@ module GridSquareJpn
   #
   def self.half(lat, lng)
     validate(lat, lng)
-    codes = mesh_code(lat, lng, half: true)
-    codes[:half]
+    codes = mesh_code(lat, lng, primary: true, secondary: true, basic: true, half: true)
+    format(codes[:primary], codes[:secondary], codes[:basic], codes[:half])
   end
 
   #
@@ -85,8 +85,8 @@ module GridSquareJpn
   #
   def self.quarter(lat, lng)
     validate(lat, lng)
-    codes = mesh_code(lat, lng, quarter: true)
-    codes[:quarter]
+    codes = mesh_code(lat, lng, primary: true, secondary: true, basic: true, half: true, quarter: true)
+    format(codes[:primary], codes[:secondary], codes[:basic], codes[:half], codes[:quarter])
   end
 
   private
@@ -136,6 +136,10 @@ module GridSquareJpn
     raise OutOfRangeException.new("lat should be in #{LAT_RANGE}.") unless LAT_RANGE.include? lat
     raise OutOfRangeException.new("lng should be in #{LNG_RANGE}.") unless LNG_RANGE.include? lng
     true
+  end
+
+  def self.format(*codes)
+    codes.join(SEPARATOR)
   end
 
 end

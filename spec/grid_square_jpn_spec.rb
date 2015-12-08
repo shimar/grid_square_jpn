@@ -32,7 +32,7 @@ describe GridSquareJpn do
     end
 
     it "returns the mesh code of the secondary area partition." do
-      expect(GridSquareJpn.secondary(@lat, @lng)).to eq "45"
+      expect(GridSquareJpn.secondary(@lat, @lng)).to eq "5339-45"
     end
 
     context "when the invalid values given," do
@@ -52,7 +52,7 @@ describe GridSquareJpn do
     end
 
     it "returns the mesh code of the basic grid square." do
-      expect(GridSquareJpn.basic(@lat, @lng)).to eq "47"
+      expect(GridSquareJpn.basic(@lat, @lng)).to eq "5339-45-47"
     end
 
     context "when the invalid values given," do
@@ -72,7 +72,7 @@ describe GridSquareJpn do
     end
 
     it "returns the mesh code of the half grid square." do
-      expect(GridSquareJpn.half(@lat, @lng)).to eq "1"
+      expect(GridSquareJpn.half(@lat, @lng)).to eq "5339-45-47-1"
     end
 
     context "when the invalid values given," do
@@ -92,7 +92,7 @@ describe GridSquareJpn do
     end
 
     it "returns the mesh code of the quarter grid square." do
-      expect(GridSquareJpn.quarter(@lat, @lng)).to eq "1"
+      expect(GridSquareJpn.quarter(@lat, @lng)).to eq "5339-45-47-1-1"
     end
 
     context "when the invalid values given," do
@@ -228,6 +228,12 @@ describe GridSquareJpn do
         expect(GridSquareJpn.send(:validate, 20.0, 122.0)).to be_truthy
         expect(GridSquareJpn.send(:validate, 46.0, 154.0)).to be_truthy
       end
+    end
+  end
+
+  describe "format" do
+    it "joins each values with SEPARATOR." do
+      expect(GridSquareJpn.send(:format, "1", "2", "3")).to eq "1-2-3"
     end
   end
 
