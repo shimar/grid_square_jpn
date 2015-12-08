@@ -26,6 +26,7 @@ module GridSquareJpn
 
   #
   # get the mesh code of primary area partition.
+  #
   # @param  [Float]  lat  latitude.
   # @param  [Float]  lng  longitude.
   # @return [String] the mesh code.
@@ -38,6 +39,7 @@ module GridSquareJpn
 
   #
   # get the mesh code of secondary area partition.
+  #
   # @param  [Float]  lat  latitude.
   # @param  [Float]  lng  longitude.
   # @return [String] the mesh code.
@@ -50,6 +52,7 @@ module GridSquareJpn
 
   #
   # get the mesh code of basic grid square.
+  #
   # @param  [Float]  lat  latitude.
   # @param  [Float]  lng  longitude.
   # @return [String] the mesh code.
@@ -62,6 +65,7 @@ module GridSquareJpn
 
   #
   # get the mesh code of half grid square.
+  #
   # @param  [Float]  lat  latitude.
   # @param  [Float]  lng  longitude.
   # @return [String] the mesh code.
@@ -74,6 +78,7 @@ module GridSquareJpn
 
   #
   # get the mesh code of quarter grid square.
+  #
   # @param  [Float]  lat  latitude.
   # @param  [Float]  lng  longitude.
   # @return [String] the mesh code.
