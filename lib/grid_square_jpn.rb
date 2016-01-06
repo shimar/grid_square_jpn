@@ -1,5 +1,6 @@
 require "grid_square_jpn/version"
 require "grid_square_jpn/exceptions"
+require "grid_square_jpn/point"
 
 module GridSquareJpn
 
