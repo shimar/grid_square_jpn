@@ -7,5 +7,9 @@ module GridSquareJpn
       @lat = lat
       @lng = lng
     end
+
+    def to_a
+      [ @lat, @lng ]
+    end
   end
 end
