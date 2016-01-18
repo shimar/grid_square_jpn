@@ -5,7 +5,10 @@ module GridSquareJpn
     attr_accessor :east
     attr_accessor :west
 
-    def initialize north: nil, south: nil, east: nil, west: nil
+    #
+    # initialize this object with given coordinates.
+    #
+    def initialize north: , south: , east: , west:
       @north = north
       @south = south
       @east  = east
