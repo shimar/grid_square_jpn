@@ -38,6 +38,11 @@ describe GridSquareJpn::Bound do
     it "returns the point of south-east." do
       expect(@bound.se.to_a).to eq [ 20.0, 154.0 ]
     end
+
+    it "has an alias :south_west." do
+      expect(@bound.respond_to?(:south_west)).to be_truthy
+      expect(@bound.south_west.to_a).to eq [ 20.0, 122.0 ]
+    end
   end
 
   describe "nw" do
@@ -52,6 +57,16 @@ describe GridSquareJpn::Bound do
     it "returns the point of north-west." do
       expect(@bound.nw.to_a).to eq [ 46.0, 122.0 ]
     end
+
+    it "has an alias :north_west." do
+      expect(@bound.respond_to?(:north_west)).to be_truthy
+      expect(@bound.north_west.to_a).to eq [ 46.0, 122.0 ]
+    end
+
+    it "has an alias :south_east." do
+      expect(@bound.respond_to?(:south_east)).to be_truthy
+      expect(@bound.south_east.to_a).to eq [ 20.0, 154.0 ]
+    end
   end
 
   describe "ne" do
@@ -65,6 +80,11 @@ describe GridSquareJpn::Bound do
 
     it "returns the point of north-east." do
       expect(@bound.ne.to_a).to eq [ 46.0, 154.0 ]
+    end
+
+    it "has an alias :north_east." do
+      expect(@bound.respond_to?(:north_east)).to be_truthy
+      expect(@bound.north_east.to_a).to eq [ 46.0, 154.0 ]
     end
   end
 

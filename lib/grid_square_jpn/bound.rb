@@ -22,6 +22,7 @@ module GridSquareJpn
     def sw
       Point.new south, west
     end
+    alias_method(:south_west, :sw)
 
     #
     # Return the Point of south-east.
@@ -30,6 +31,7 @@ module GridSquareJpn
     def se
       Point.new south, east
     end
+    alias_method(:south_east, :se)
 
     #
     # Return the Point of north-west.
@@ -38,6 +40,7 @@ module GridSquareJpn
     def nw
       Point.new north, west
     end
+    alias_method(:north_west, :nw)
 
     #
     # Return the Point of north-east.
@@ -46,5 +49,6 @@ module GridSquareJpn
     def ne
       Point.new north, east
     end
+    alias_method(:north_east, :ne)
   end
 end
