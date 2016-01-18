@@ -91,6 +91,16 @@ module GridSquareJpn
     format(codes[:primary], codes[:secondary], codes[:basic], codes[:half], codes[:quarter])
   end
 
+
+  #
+  # get the bounds which described by given mesh code.
+  # @param [String] mesh code.
+  # @return [Bound] the bound object.
+  #
+  def self.bounds(code)
+    # TODO
+  end
+
   private
 
   #
