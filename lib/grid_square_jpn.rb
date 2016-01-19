@@ -2,6 +2,7 @@ require "grid_square_jpn/version"
 require "grid_square_jpn/exceptions"
 require "grid_square_jpn/point"
 require "grid_square_jpn/bound"
+require "grid_square_jpn/mesh_code"
 
 module GridSquareJpn
 
@@ -94,11 +95,11 @@ module GridSquareJpn
 
   #
   # get the bounds which described by given mesh code.
+  #
   # @param [String] mesh code.
   # @return [Bound] the bound object.
   #
   def self.bounds(code)
-    # TODO
   end
 
   private
